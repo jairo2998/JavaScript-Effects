@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background: #111;
+    overflow: hidden;
+}
+
+.circle{
+    position: absolute;
+    bottom: 0;
+    width: 50px;
+    aspect-ratio: 1/1;    
+    border-radius: 50%;
+    animation: animate 5s linear forwards;
+}
+
+.circle::before{
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 25%;
+    width: 50%;
+    height: 100vh;
+    opacity: 0.5s;
+    background: inherit;
+}
+    
+
+
+@keyframes animate {
+    0%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.75;
+    }
+    100%{
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
